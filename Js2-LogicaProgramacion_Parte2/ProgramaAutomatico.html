@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- crearemos un programa que cree esas animaciones en forma automática, que pueda dibujar circunferencias, 
+        cuadrados, cualquier figura geométrica que queramos, pero de forma automática, 
+        que el programa lo haga por sí solo. -->
+    <canvas width="600" height="400"> </canvas>
+
+    <script>
+      /* */
+      /*Creamos nuestra variable pantalla, que recibe ese Canvas aquí en JavaScript.*/
+      var pantalla = document.querySelector("canvas");
+
+      /*creamos una variable pincel, que es como si fuera nuestro dibujador, la cual recibe el contexto del Canvas en dos dimensiones,
+      que es donde vamos a diseñar.*/
+      var pincel = pantalla.getContext("2d");
+      pincel.fillStyle = "grey";
+      pincel.fillRect(0, 0, 600, 400);
+
+      /*Vamos a crear una función, como ya lo hemos dicho antes, para dibujar círculos, circunferencias. Voy a llamarlo disenarCircunferencia.*/
+
+      /*Va recibir algún parámetro  nuestra función. ¿Cuáles serían esos parámetros? Básicamente la coordenada, la coordenada horizontal(x) y vertical(y), y el tamaño de esta circunferencia, el radio de la circunferencia.*/
+      function disenarCircunferencia(x, y, radio) {
+        /*Vamos a reutilizar nuestro pincel, que ya lo habíamos definido arriba y vamos a definir el color.*/
+        pincel.fillStyle = "blue";
+
+        /* Luego iniciamos un camino, beginPath, que es como decirle: "Voy a comenzar a graficar y te voy a pasar luego las coordenadas".*/
+        pincel.beginPath();
+
+        /* la función arc, para graficar, la cual recibía cinco parámetros. En este caso
+        Recibe las coordenadas, son los dos primeros parámetros, coordenada horizontal(x) y vertical(y), dónde queremos que empiece, cuál va a ser el punto inicial de la circunferencia, cuál va a ser el centro de la circunferencia, después pasábamos el radio, el tamaño de nuestra circunferencia y por último el ángulo inicial y el ángulo final en radiales.*/
+        pincel.arc(x, y, radio, 0, 2 * Math.PI);
+
+        /* tenemos nuestra función que le dice: "llenalo, llename esa circunferencia". Fill. Llename la circunferencia.*/
+        pincel.fill();
+      }
+
+      /*Aquí llamamos a esa función disenarCircunferencia y vamos a pasar los tres parámetros*/
+      //disenarCircunferencia(20, 20, 10);
+
+      /*lo que vamos a hacer ahora es crear una instrucción para limpiar la pantalla que está dentro de nuestro pincel que se llama clearRect
+      Y aquí le pasamos las mismas coordenadas que nuestro Canvas diciéndole: "Limpiame todo, no quiero ver absolutamente nada".*/
+      function limpiarPantalla() {
+        pincel.clearRect(0, 0, 600, 400);
+      }
+
+      /*tenemos que usar una función en la cual yo le diga: "Graficame a cada cierto tiempo". No existe una manera en verdad. Existe la manera pero nosotros ya la programamos, ya existe una función por defecto en JavaScript, una función que nos ayuda a hacer eso que se llama setInterval de setear intervalo o dimensionar intervalo*/
+      setInterval(actualizarPantalla, 1000);
+
+      /*Lo que vamos a hacer es crear una nueva función. Function actualizarPantalla.
+      ¿Qué va a hacer nuestra actualizarPantalla? Va a crear la circunferencia. Aquí va a tener como parámetros las coordenadas y el radio que lo vamos a mantener constante en 10. Vamos a limpiar la pantalla. Solo que necesitamos crear nuestra variable X aquí y definirla por 0 y aquí colocamos un contador X++.*/
+      var x = 0;
+      orden = 20;
+
+      function actualizarPantalla() {
+        limpiarPantalla();
+        if (x > 600) {
+          orden = -20;
+        } else if (x < 0) {
+          orden = 20;
+        }
+        disenarCircunferencia(x, 20, 10);
+
+        x = x + orden;
+      }
+    </script>
+  </body>
+</html>
