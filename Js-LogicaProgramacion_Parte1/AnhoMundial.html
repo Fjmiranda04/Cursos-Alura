@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <h1>Mundial Fifa</h1>
+    <script>
+      function saltarLinea() {
+        document.write("<br><br>");
+      }
+
+      function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+      }
+
+      var limite = parseInt(
+        prompt("Ingrese el año limite para calcular los munduiales")
+      );
+      var anhoMundial = 1930;
+
+      while (anhoMundial <= limite) {
+        imprimir("Hubo mundial de la fifa en el año " + anhoMundial);
+        anhoMundial = anhoMundial + 4;
+      }
+
+      imprimir("Fin");
+    </script> -->
+
+    <h1>Tabla de Multiplicar</h1>
+
+    <script>
+      function saltarLinea() {
+        document.write("<br><br>");
+      }
+
+      function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+      }
+
+      var numeroDeTabla = parseInt(
+        prompt("Digite el numero de la tabla que quiere calcular")
+      );
+
+      var limteDeTabla = parseInt(
+        prompt("Digite hasta que numero quiere calcular")
+      );
+
+      for (let index = 0; index <= limteDeTabla; index++) {
+        imprimir(numeroDeTabla + " x " + index + " = " + numeroDeTabla * index);
+      }
+
+      /*var multiplicador = 1;
+
+      while (multiplicador <= 10) {
+        imprimir(numeroDeTabla + " x " + multiplicador+ " = " + (numeroDeTabla * multiplicador));
+        multiplicador= multiplicador+1;
+      }*/
+    </script>
+  </body>
+</html>

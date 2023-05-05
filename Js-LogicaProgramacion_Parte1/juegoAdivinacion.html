@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Calculadora IMC</title>
+  </head>
+  <body>
+    <!-- <h1>JUEGO DE ADIVINANZA</h1>
+
+    <script>
+      function saltarLinea() {
+        document.write("<br><br>");
+      }
+
+      function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+      }
+
+      var numeroPensado = Math.ceil(Math.random() * 10);
+      var numeroLanzado = parseInt(prompt("Ingrese un numero entre 0 y 10"));
+
+      if (numeroLanzado >= 0 && numeroLanzado <= 10) {
+        if (numeroLanzado == numeroPensado) {
+          imprimir("ACERTASTE EL NUMERO PENSANDO ES IGUAL AL NUMERO LANZADO");
+        } else {
+          imprimir(
+            "FALLASTE NO ERA EL NUMERO PENSADO ERA:  " +
+              numeroPensado +
+              " <br>VUELVE A INTENTARLO :)"
+          );
+        }
+      } else {
+       imprimir(
+          "EL NUMERO SE EXCEDE DEL RANGO, POR FAVOR INGRESE UN NUMERO VALIDO ENTRE 0 Y 10"
+        );
+      }
+    </script> -->
+
+    <!-- <h1>EDAD PARA CONDUCIR</h1>
+
+    <script>
+      function saltarLinea() {
+        document.write("<br><br>");
+      }
+
+      function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+      }
+
+      //var edad = parseInt(prompt("¿Cuál es tu edad?"));
+      var edad = Math.ceil(Math.random() * 25);
+      var tieneLicencia =  Math.ceil(Math.random());
+      //var tieneLicencia = prompt("¿Tienes licencia? Responde S o N");
+imprimir(edad);
+imprimir(tieneLicencia);
+      if(edad >= 18 && tieneLicencia==1){
+
+        imprimir("El Usuario puede conducir");
+
+      }else{
+        imprimir("El Usuario NO puede conducir");
+      }
+    </script> -->
+
+    <h1>Loteria</h1>
+
+    <script>
+      function saltarLinea() {
+        document.write("<br><br>");
+      }
+
+      function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+      }
+
+      /* function Loteria(numeroPensado) {
+        return Math.ceil(Math.random() * numeroPensado);
+      }
+
+      pedirNumero = parseInt(prompt("Digite un numero"));
+      var numeroPensado = Loteria(pedirNumero);
+      imprimir("EL NUMERO PENSADO ES: " + numeroPensado);
+      */
+
+      var numeroPensado = Math.ceil(Math.random() * 10);
+      var contador = 1;
+      var numeroIntentos = 3;
+
+      while (contador <= numeroIntentos) {
+        var numeroLanzado = parseInt(
+          prompt("Digite el numero a lanzar entre 0-10")
+        );
+
+        if (numeroLanzado == numeroPensado) {
+          alert(
+            "Vaya acertaste en el intento " +
+              contador +
+              " el numero pensado era " +
+              numeroPensado
+          );
+          break;
+        } else {
+          alert("Vaya perdiste");
+        }
+
+        contador++;
+      }
+      imprimir("FIN, el numero pensado era 2" + numeroPensado);
+    </script>
+  </body>
+</html>

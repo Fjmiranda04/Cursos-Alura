@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="adivinanza">Adivine el Secreto</label>
+    <br />
+    <input type="number" id="adivinanza1" name="adivinanza1" />
+    <br />
+    <button>Verificar si acepto con el secreto</button>
+
+    <script>
+      function aleatorio() {
+        return Math.ceil(Math.random() * 10);
+      }
+
+      function sortearNumeros(cantidad) {
+        secretos = [];
+        for (let index = 0; index <= cantidad; index++) {
+          var numeroAleatorio = aleatorio();
+          var encontrado = false;
+          if (numeroAleatorio != 0) {
+            for (let index1 = 0; index1 < secretos.length; index1++) {
+              if (numeroAleatorio == secretos[index1]) {
+                encontrado = true;
+              }
+            }
+            if (encontrado == false) {
+              secretos.push(numeroAleatorio);
+            }
+          }
+        }
+        return secretos;
+      }
+
+      var secretos = sortearNumeros(4);
+
+      console.log(secretos);
+
+      var input = document.querySelector("input");
+      input.focus();
+      function verificar() {
+        var encontrado = false;
+
+        for (var index = 0; index < secretos.length; index++) {
+          if (input.value == secretos[index]) {
+            alert("USTED ACERTO");
+            encontrado = true;
+            break;
+          }
+        }
+        if (encontrado == false) {
+          alert("USTED NO ACERTO");
+        }
+
+        input.value = "";
+        input.focus();
+      }
+
+      var btn = document.querySelector("button");
+      btn.onclick = verificar;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>CLASE JAVASCRIPT</h1>
+    <script>
+      function SaltoLinea() {
+        document.write("<br><br>");
+      }
+      function Imprimir(texto) {
+        document.write(texto);
+        SaltoLinea();
+      }
+      /* numero = Math.ceil(Math.random() * 10);
+      nombre = prompt("DIGITA TU NOMBRE");
+      peso = parseInt(prompt("DIGITE SU PESO"));
+
+      Imprimir("HOLA " + nombre);
+      SaltoLinea();
+      Imprimir("TIENES UN PESO DE " + peso + "Kg");
+      SaltoLinea();
+      Imprimir(numero);*/
+
+      var numeroUno = 20;
+      var numeroDos = 40;
+      var numeroTres = 50;
+
+      promedio = (numeroUno, numeroDos, numeroTres) / 3;
+      exp = Math.pow(numeroUno, 1 / 2);
+      redondearUno = Math.round(numeroTres);
+      redondearDos = Math.floor(numeroDos);
+      max = Math.max(numeroUno, numeroDos, numeroTres);
+      min = Math.min(numeroUno, numeroDos, numeroTres);
+
+      Imprimir(promedio);
+      Imprimir(exp);
+      Imprimir(redondearUno);
+      Imprimir(redondearDos);
+      Imprimir(max);
+      Imprimir(min);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Calculadora IMC</title>
+  </head>
+  <body>
+    <h1>PROGRAMA CLACULAR IMC</h1>
+
+    <script>
+      function saltarLinea() {
+        document.write("<br><br>");
+      }
+
+      function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+      }
+
+      function calculadoraIMC(peso, altura) {
+        return peso / Math.pow(altura, 2);
+      }
+      pesoInforme = prompt("DIGITE SU PESO");
+      alturaInforme = prompt("DIGITE SU ALTURA");
+
+      imcCalculado = calculadoraIMC(pesoInforme, alturaInforme);
+
+      imprimir("EL PORCENTAJE DE IMC ES DE " + imcCalculado);
+      saltarLinea();
+
+      if (imcCalculado < 18.5) {
+        
+        imprimir("Insuficiencia ponderal");
+       
+      }
+
+      if (imcCalculado >= 18.5 && imcCalculado < 30) {
+        
+        imprimir("intevralo normal");
+      }
+    </script>
+  </body>
+</html>
