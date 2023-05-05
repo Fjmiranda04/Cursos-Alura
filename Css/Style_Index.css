@@ -1,0 +1,56 @@
+/* * {
+  margin: 0;
+  padding: 0;
+} */
+
+.titulo-principal{
+  padding-left: 30px;
+}
+
+.principal {
+  background: #cccccc;
+  padding: 20px;
+}
+
+#diseño_barbería {
+  align-items: center;
+  width: 100%;
+ 
+ 
+}
+
+.titulo-centralizado {
+  text-align: center;
+  
+}
+
+p {
+  font-size: 20px;
+  text-align: center;
+  margin: 10px;
+}
+
+.misión {
+  color: red;
+}
+
+.diferenciales {
+  background: #ffffff;
+  padding: 30px;
+}
+
+.Items {
+  font-style: italic;
+  margin-left: 30px;
+}
+
+ul{
+  display: inline-block;
+  vertical-align: top;
+  width: 20%;
+  margin-right: 15%;
+}
+.imagenDiferencial {
+  width: 50%;
+  
+}
